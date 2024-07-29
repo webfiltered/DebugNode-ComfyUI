@@ -104,10 +104,7 @@ app.registerExtension({
                 }
 
                 requestAnimationFrame(() => {
-                    const size = this.computeSize();
-                    for (const widget of this.widgets.filter(x => x.element)) {
-                        widget.onResize?.(size)
-                    }
+                    this.onResize?.(this.size)
                 })
 
                 return r
