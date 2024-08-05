@@ -1,0 +1,14 @@
+[project]
+name = "debugnode-comfyui"
+description = "This node provides a simple way to view the output of many nodes, without leaving ComfyUI."
+version = "1.0.0"
+license = {file = "LICENSE"}
+
+[project.urls]
+Repository = "https://github.com/webfiltered/DebugNode-ComfyUI"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "DebugNode-ComfyUI"
+Icon = ""
