@@ -68,7 +68,7 @@ class WTFDebugNode:
             except Exception as e:
                 info["shape"] = str(e)
 
-            info["value"] = str(item) if item != None else None
+            info["value"] = str(item) if item is not None else None
             out.append(info)
 
         return { "ui": { "items": out, "length": [len(anything)] } }
