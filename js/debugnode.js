@@ -23,6 +23,13 @@ app.registerExtension({
     name: "WTFDebugNode",
     async beforeRegisterNodeDef(nodeType, nodeData, app) {
         if (nodeData.name === "WTFDebugNode") {
+            const origOnConnectionsChange = nodeType.prototype.onConnectionsChange
+            nodeType.prototype.onConnectionsChange = function (type, slotIndex, isConnected, link, ioSlot) {
+                origOnConnectionsChange?.apply(this, arguments)
+
+                if (isConnected && link?.type === "*") 
+                    link.type = this.graph.getNodeById(link.origin_id)?.outputs?.[link.origin_slot]?.type
+            }
 
             const origOnExecuted = nodeType.prototype.onExecuted;
             nodeType.prototype.onExecuted = function (message) {
