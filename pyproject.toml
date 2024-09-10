@@ -1,7 +1,7 @@
 [project]
 name = "debugnode-comfyui"
 description = "This node provides a simple way to view the output of many nodes, without leaving ComfyUI."
-version = "1.0.0"
+version = "1.1.0"
 license = {file = "LICENSE"}
 
 [project.urls]
