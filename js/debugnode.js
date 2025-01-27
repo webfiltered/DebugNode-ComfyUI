@@ -24,6 +24,7 @@ app.registerExtension({
   async beforeRegisterNodeDef(nodeType, nodeData, app) {
     if (nodeData.name !== "WTFDebugNode") return
 
+    // Ensure attached links keep their colours
     const origOnConnectionsChange = nodeType.prototype.onConnectionsChange
     nodeType.prototype.onConnectionsChange = function (type, slotIndex, isConnected, link, ioSlot) {
       origOnConnectionsChange?.apply(this, arguments)
