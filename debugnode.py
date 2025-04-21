@@ -71,7 +71,7 @@ class WTFDebugNode:
             info["value"] = str(item) if item is not None else None
             out.append(info)
 
-        return { "ui": { "items": out, "length": [len(anything)] } }
+        return { "ui": { "items": out } }
 
 NODE_CLASS_MAPPINGS = {
     "WTFDebugNode": WTFDebugNode,
