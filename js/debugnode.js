@@ -85,7 +85,7 @@ app.registerExtension({
             : name
           const comfyType = isMultiline
             ? ["STRING", { multiline: true }]
-            : "STRING"
+            : ["STRING", {}]
 
           const current = node.widgets.find(x => x.name === numberedName)
           const widget = current ?? ComfyWidgets.STRING(node, numberedName, comfyType, app).widget
