@@ -33,6 +33,7 @@ app.registerExtension({
         link.type = this.graph.getNodeById(link.origin_id)?.outputs?.[link.origin_slot]?.type
     }
 
+    // Show the text in the UI
     const origOnExecuted = nodeType.prototype.onExecuted
     nodeType.prototype.onExecuted = function (message) {
       const r = origOnExecuted
@@ -89,11 +90,10 @@ app.registerExtension({
           const current = node.widgets.find(x => x.name === numberedName)
           const widget = current ?? ComfyWidgets.STRING(node, numberedName, comfyType, app).widget
 
-          if (!widget.options)
-            widget.options = {}
+          widget.options ??= {}
           widget.options.serialize = false
           widget.value = value
-          widget.disabled = value === null || value === undefined
+          widget.disabled = value == null
           if (isMultiline) {
             widget.element.style.opacity = widget.disabled
               ? baseOpacity * 0.5
