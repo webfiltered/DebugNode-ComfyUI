@@ -9,6 +9,6 @@ Repository = "https://github.com/webfiltered/DebugNode-ComfyUI"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = "filtered"
+PublisherId = "webfiltered"
 DisplayName = "DebugNode-ComfyUI"
 Icon = ""
